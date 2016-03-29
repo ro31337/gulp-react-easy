@@ -7,6 +7,6 @@ test.cb('Should have methods and constructor defined', t => {
   });
 
   t.ok(easyReact);
-  t.ok(typeof easyReact.to === 'function')
+  t.ok(typeof easyReact.to === 'function');
   t.end();
 });
