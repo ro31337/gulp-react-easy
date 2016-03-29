@@ -54,3 +54,34 @@ test.cb('Should have .jsx extension by default', t => {
   t.ok(easyReact.opts.extensions[0] === '.jsx');
   t.end();
 });
+
+test.cb('Should throw exception if extension is specified, but it\'s not array', t => {
+  const err = '"extensions" parameter provided, but array is expected!';
+
+  t.throws(() => {
+    new EasyReact({file: 'one', extensions: 123});
+  }, err);
+
+  t.end();
+});
+
+test.cb('Should set opts.extensions to specified value', t => {
+  const easyReact = new EasyReact({
+    file: 'dummy.txt',
+    extensions: ['.js']
+  });
+
+  t.ok(easyReact.opts.extensions.length === 1);
+  t.ok(easyReact.opts.extensions[0] === '.js');
+  t.end();
+});
+
+test.cb('Should set opts.extensions to default value', t => {
+  const easyReact = new EasyReact({
+    file: 'dummy.txt'
+  });
+
+  t.ok(easyReact.opts.extensions.length === 1);
+  t.ok(easyReact.opts.extensions[0] === '.jsx');
+  t.end();
+});

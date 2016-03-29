@@ -29,8 +29,12 @@ class EasyReact {
       throw new PluginError(PLUGIN_NAME, 'Only one "file" or "files" parameter is expected!');
     }
 
+    if(options.extensions && !Array.isArray(options.extensions)) {
+      throw new PluginError(PLUGIN_NAME, '"extensions" parameter provided, but array is expected!');
+    }
+
     const opts = objectAssign({
-      extensions: ['.jsx'],
+      extensions: options.extensions || ['.jsx'],
       entries: options.file || options.files
     }, options);
 
