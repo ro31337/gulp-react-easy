@@ -21,11 +21,15 @@ class EasyReact {
    * @param  {string} [options.files] - Mask for multiple ES6/JSX files
    */
   constructor(options = {}) {
-    const opts = objectAssign({}, options);
+    const opts = objectAssign({
+      extensions: ['.jsx']
+    }, options);
 
     if (!opts.file && !opts.files) {
       throw new PluginError(PLUGIN_NAME, 'Missing incoming "file" or "files" parameter!');
     }
+
+    this.opts = opts;
   }
 
   /**
