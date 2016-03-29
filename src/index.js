@@ -1,7 +1,7 @@
 import through from 'through2';
 import { PluginError } from 'gulp-util';
 
-const PLUGIN_NAME = 'gul-easy-react';
+const PLUGIN_NAME = 'gulp-easy-react';
 
 class EasyReact {
   constructor(options) {
