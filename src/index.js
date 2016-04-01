@@ -5,6 +5,9 @@
 import through from 'through2';
 import { PluginError } from 'gulp-util';
 import objectAssign from 'object-assign';
+import browserify from 'browserify';
+import babelify from 'babelify';
+import source from 'vinyl-source-stream';
 
 const PLUGIN_NAME = 'gulp-easy-react';
 
@@ -16,9 +19,9 @@ class EasyReact {
   /**
    * Creates EasyReact object
    *
-   * @param  {object} [options]
-   * @param  {string} [options.file] - Single ES6/JSX file
-   * @param  {string} [options.files] - Mask for multiple ES6/JSX files
+   * @param {object} [options]
+   * @param {string} [options.file] - Single ES6/JSX file
+   * @param {string} [options.files] - Mask for multiple ES6/JSX files
    */
   constructor(options = {}) {
     if (!options.file && !options.files) {
@@ -49,10 +52,22 @@ class EasyReact {
   /**
    * Pipes out browserified, babelified and bundled React.js code
    *
-   * @param  {string} file - Output file name
+   * @param  {string} outFile - Output file name
    * @return {object} pipe - Gulp pipe
    */
-  to(file) {
+  to(outFile) {
+    const babelifyConfig = babelify.configure({
+      presets: this.opts.presets,
+      extensions: this.opts.extensions
+    });
+
+    return browserify({
+        entries: this.opts.entries,
+        extensions: this.opts.extensions
+      })
+      .transform(babelifyConfig)
+      .bundle()
+      .pipe(source(outFile));
   }
 }
 
