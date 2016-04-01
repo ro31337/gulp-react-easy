@@ -8,6 +8,8 @@ var _createClass = function () { function defineProperties(target, props) { for 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * @module gulp-react-easy
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */
 
+exports.reactEasy = reactEasy;
+
 var _gulpUtil = require('gulp-util');
 
 var _objectAssign = require('object-assign');
@@ -102,4 +104,15 @@ var ReactEasy = function () {
   return ReactEasy;
 }();
 
-exports.default = ReactEasy;
+/**
+ * Factory method for ReactEasy class
+ *
+ * @return {object} object - ReactEasy class instance
+ */
+
+
+function reactEasy() {
+  var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+
+  return new ReactEasy(options);
+}
