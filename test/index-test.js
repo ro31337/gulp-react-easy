@@ -55,11 +55,11 @@ test.cb('Should have .jsx extension by default', t => {
   t.end();
 });
 
-test.cb('Should throw exception if extension is specified, but it\'s not array', t => {
+test.cb('Should throw exception if "extensions" is specified, but it\'s not array', t => {
   const err = '"extensions" parameter provided, but array is expected!';
 
   t.throws(() => {
-    new EasyReact({file: 'one', extensions: 123});
+    new EasyReact({file: 'dummy.txt', extensions: 123});
   }, err);
 
   t.end();
@@ -83,5 +83,37 @@ test.cb('Should set opts.extensions to default value', t => {
 
   t.ok(easyReact.opts.extensions.length === 1);
   t.ok(easyReact.opts.extensions[0] === '.jsx');
+  t.end();
+});
+
+test.cb('Should throw exception if "presets" is specified, but it\'s not array', t => {
+  const err = '"presets" parameter provided, but array is expected!';
+
+  t.throws(() => {
+    new EasyReact({file: 'dummy.txt', presets: 123});
+  }, err);
+
+  t.end();
+});
+
+test.cb('Should set opts.presets to specified value', t => {
+  const easyReact = new EasyReact({
+    file: 'dummy.txt',
+    presets: ['something-new']
+  });
+
+  t.ok(easyReact.opts.presets.length === 1);
+  t.ok(easyReact.opts.presets[0] === 'something-new');
+  t.end();
+});
+
+test.cb('Should set opts.presets to default value', t => {
+  const easyReact = new EasyReact({
+    file: 'dummy.txt'
+  });
+
+  t.ok(easyReact.opts.presets.length === 2);
+  t.ok(easyReact.opts.presets[0] === 'es2015');
+  t.ok(easyReact.opts.presets[1] === 'react');
   t.end();
 });

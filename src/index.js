@@ -33,8 +33,13 @@ class EasyReact {
       throw new PluginError(PLUGIN_NAME, '"extensions" parameter provided, but array is expected!');
     }
 
+    if(options.presets && !Array.isArray(options.presets)) {
+      throw new PluginError(PLUGIN_NAME, '"presets" parameter provided, but array is expected!');
+    }
+
     const opts = objectAssign({
       extensions: options.extensions || ['.jsx'],
+      presets: options.presets || ['es2015', 'react'],
       entries: options.file || options.files
     }, options);
 
