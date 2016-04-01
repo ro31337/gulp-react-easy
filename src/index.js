@@ -2,7 +2,6 @@
  * @module gulp-easy-react
  */
 
-import through from 'through2';
 import { PluginError } from 'gulp-util';
 import objectAssign from 'object-assign';
 import browserify from 'browserify';
