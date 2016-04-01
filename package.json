@@ -1,6 +1,6 @@
 {
   "name": "gulp-react-easy",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Gulp plugin to simplify React development with ES6",
   "main": "dist/index.js",
   "directories": {
