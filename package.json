@@ -27,7 +27,7 @@
   "bugs": {
     "url": "https://github.com/ro31337/gulp-easy-react/issues"
   },
-  "homepage": "https://github.com/ro31337/gulp-easy-react#readme",
+  "homepage": "https://github.com/ro31337/gulp-easy-react",
   "devDependencies": {
     "ava": "^0.13.0",
     "babel-cli": "^6.6.5",
