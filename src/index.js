@@ -70,4 +70,11 @@ class ReactEasy {
   }
 }
 
-export default ReactEasy;
+/**
+ * Factory method for ReactEasy class
+ *
+ * @return {object} object - ReactEasy class instance
+ */
+export function reactEasy(options = {}) {
+  return new ReactEasy(options);
+}
