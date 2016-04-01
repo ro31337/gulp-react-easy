@@ -1,3 +1,4 @@
 # temporary ignore dist directory while in development
 dist
 node_modules
+npm-debug.log
