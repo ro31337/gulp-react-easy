@@ -1,5 +1,5 @@
 /**
- * @module gulp-easy-react
+ * @module gulp-react-easy
  */
 
 import { PluginError } from 'gulp-util';
@@ -8,15 +8,15 @@ import browserify from 'browserify';
 import babelify from 'babelify';
 import source from 'vinyl-source-stream';
 
-const PLUGIN_NAME = 'gulp-easy-react';
+const PLUGIN_NAME = 'gulp-react-easy';
 
 /**
  * Transforms ES6/JSX file(s) to browserified and babelified bundle
  */
-class EasyReact {
+class ReactEasy {
 
   /**
-   * Creates EasyReact object
+   * Creates ReactEasy object
    *
    * @param {object} [options]
    * @param {string} [options.file] - Single ES6/JSX file
@@ -70,4 +70,4 @@ class EasyReact {
   }
 }
 
-export default EasyReact;
+export default ReactEasy;

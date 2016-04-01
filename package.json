@@ -1,5 +1,5 @@
 {
-  "name": "gulp-easy-react",
+  "name": "gulp-react-easy",
   "version": "0.0.1",
   "description": "Gulp plugin to simplify React development with ES6",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ro31337/gulp-easy-react.git"
+    "url": "git+https://github.com/ro31337/gulp-react-easy.git"
   },
   "keywords": [
     "gulpplugin",
@@ -25,9 +25,9 @@
   "author": "Roman Pushkin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ro31337/gulp-easy-react/issues"
+    "url": "https://github.com/ro31337/gulp-react-easy/issues"
   },
-  "homepage": "https://github.com/ro31337/gulp-easy-react",
+  "homepage": "https://github.com/ro31337/gulp-react-easy",
   "devDependencies": {
     "ava": "^0.13.0",
     "babel-cli": "^6.6.5",
