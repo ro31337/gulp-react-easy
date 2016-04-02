@@ -18,3 +18,9 @@ or
 ```
 npm test
 ```
+
+Build before publishing:
+
+```
+npm run build
+```
