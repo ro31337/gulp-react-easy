@@ -43,7 +43,7 @@ It saves browserified and babelified `bundle.js` to `.` directory
 
 ### Example projects
 
-TODO
+[React-easy-example1](https://github.com/ro31337/react-easy-example1)
 
 ### License
 
