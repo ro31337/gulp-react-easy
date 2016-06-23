@@ -6,8 +6,8 @@ test.cb('Should have methods and constructor defined', t => {
     file: 'dummy.txt'
   });
 
-  t.ok(o);
-  t.ok(typeof o.to === 'function');
+  t.truthy(o);
+  t.truthy(typeof o.to === 'function');
   t.end();
 });
 
@@ -41,8 +41,8 @@ test.cb('Should set opts.entries to either "file" or "files"', t => {
     files: 'dummy2.txt'
   });
 
-  t.ok(o1.opts.entries === 'dummy1.txt');
-  t.ok(o2.opts.entries === 'dummy2.txt');
+  t.truthy(o1.opts.entries === 'dummy1.txt');
+  t.truthy(o2.opts.entries === 'dummy2.txt');
   t.end();
 });
 
@@ -51,7 +51,7 @@ test.cb('Should have .jsx extension by default', t => {
     file: 'dummy.txt'
   });
 
-  t.ok(o.opts.extensions[0] === '.jsx');
+  t.truthy(o.opts.extensions[0] === '.jsx');
   t.end();
 });
 
@@ -71,8 +71,8 @@ test.cb('Should set opts.extensions to specified value', t => {
     extensions: ['.js']
   });
 
-  t.ok(o.opts.extensions.length === 1);
-  t.ok(o.opts.extensions[0] === '.js');
+  t.truthy(o.opts.extensions.length === 1);
+  t.truthy(o.opts.extensions[0] === '.js');
   t.end();
 });
 
@@ -81,8 +81,8 @@ test.cb('Should set opts.extensions to default value', t => {
     file: 'dummy.txt'
   });
 
-  t.ok(o.opts.extensions.length === 1);
-  t.ok(o.opts.extensions[0] === '.jsx');
+  t.truthy(o.opts.extensions.length === 1);
+  t.truthy(o.opts.extensions[0] === '.jsx');
   t.is(o.opts.debug, false);
   t.end();
 });
@@ -103,8 +103,8 @@ test.cb('Should set opts.presets to specified value', t => {
     presets: ['something-new']
   });
 
-  t.ok(o.opts.presets.length === 1);
-  t.ok(o.opts.presets[0] === 'something-new');
+  t.truthy(o.opts.presets.length === 1);
+  t.truthy(o.opts.presets[0] === 'something-new');
   t.end();
 });
 
@@ -113,8 +113,8 @@ test.cb('Should set opts.presets to default value', t => {
     file: 'dummy.txt'
   });
 
-  t.ok(o.opts.presets.length === 2);
-  t.ok(o.opts.presets[0] === 'es2015');
-  t.ok(o.opts.presets[1] === 'react');
+  t.truthy(o.opts.presets.length === 2);
+  t.truthy(o.opts.presets[0] === 'es2015');
+  t.truthy(o.opts.presets[1] === 'react');
   t.end();
 });
