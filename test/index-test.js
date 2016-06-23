@@ -1,5 +1,5 @@
 import test from 'ava';
-import { reactEasy } from '../src/index.js';
+import reactEasy from '../src/index.js';
 
 test.cb('Should have methods and constructor defined', t => {
   const o = reactEasy({
