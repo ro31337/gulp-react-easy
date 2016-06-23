@@ -26,7 +26,8 @@ var reactEasy = require('gulp-react-easy');
 
 gulp.task('build', function() {
   return reactEasy({
-      file: 'src/app.jsx'
+      file: 'src/app.jsx',
+      debug: true // optional, false by default
     })
     .to('bundle.js')
     .pipe(gulp.dest('.'));

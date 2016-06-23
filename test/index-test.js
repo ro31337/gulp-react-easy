@@ -83,6 +83,7 @@ test.cb('Should set opts.extensions to default value', t => {
 
   t.ok(o.opts.extensions.length === 1);
   t.ok(o.opts.extensions[0] === '.jsx');
+  t.is(o.opts.debug, false);
   t.end();
 });
 

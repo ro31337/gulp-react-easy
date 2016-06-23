@@ -1,8 +1,14 @@
 'use strict';
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * @module gulp-react-easy
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */
+
+exports.reactEasy = reactEasy;
 
 var _gulpUtil = require('gulp-util');
 
@@ -66,7 +72,8 @@ var ReactEasy = function () {
     var opts = (0, _objectAssign2.default)({
       extensions: options.extensions || ['.jsx'],
       presets: options.presets || ['es2015', 'react'],
-      entries: options.file || options.files
+      entries: options.file || options.files,
+      debug: options.debug || false
     }, options);
 
     this.opts = opts;
@@ -85,12 +92,14 @@ var ReactEasy = function () {
     value: function to(outFile) {
       var babelifyConfig = _babelify2.default.configure({
         presets: this.opts.presets,
-        extensions: this.opts.extensions
+        extensions: this.opts.extensions,
+        sourceMaps: this.opts.debug
       });
 
       return (0, _browserify2.default)({
         entries: this.opts.entries,
-        extensions: this.opts.extensions
+        extensions: this.opts.extensions,
+        debug: this.opts.debug
       }).transform(babelifyConfig).bundle().pipe((0, _vinylSourceStream2.default)(outFile));
     }
   }]);
@@ -105,8 +114,8 @@ var ReactEasy = function () {
  */
 
 
-module.exports = function () {
+function reactEasy() {
   var options = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
 
   return new ReactEasy(options);
-};
+}

@@ -42,7 +42,8 @@ class ReactEasy {
     const opts = objectAssign({
       extensions: options.extensions || ['.jsx'],
       presets: options.presets || ['es2015', 'react'],
-      entries: options.file || options.files
+      entries: options.file || options.files,
+      debug: options.debug || false
     }, options);
 
     this.opts = opts;
@@ -57,12 +58,14 @@ class ReactEasy {
   to(outFile) {
     const babelifyConfig = babelify.configure({
       presets: this.opts.presets,
-      extensions: this.opts.extensions
+      extensions: this.opts.extensions,
+      sourceMaps: this.opts.debug
     });
 
     return browserify({
         entries: this.opts.entries,
-        extensions: this.opts.extensions
+        extensions: this.opts.extensions,
+        debug: this.opts.debug
       })
       .transform(babelifyConfig)
       .bundle()
