@@ -75,6 +75,6 @@ class ReactEasy {
  *
  * @return {object} object - ReactEasy class instance
  */
-module.exports = (options = {}) => {
+export function reactEasy(options = {}) {
   return new ReactEasy(options);
 }
