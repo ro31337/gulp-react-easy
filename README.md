@@ -46,6 +46,10 @@ It saves browserified and babelified `bundle.js` to `.` directory
 
 [React-easy-example1](https://github.com/ro31337/react-easy-example1)
 
+### Testimonials
+
+* "Its pretty cool what you did in this project, you saved hours of headache for me" ([link](https://github.com/ro31337/gulp-react-easy/issues/1#issuecomment-254868825))
+
 ### License
 
 MIT
